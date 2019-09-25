@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Aplicacao;
 
 namespace FinancasProj.Controllers
 {
@@ -12,9 +13,10 @@ namespace FinancasProj.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        [Produces ("application/json")]
+        public ContaDto Get()
         {
-            return new string[] { "value1", "value2" };
+            return new ContaDto { Nome = "Felipe", Quantidade = 2 };
         }
 
         // GET api/values/5
